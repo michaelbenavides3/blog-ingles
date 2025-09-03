@@ -1,0 +1,143 @@
+/* reiniciamos las propiedas con el selector universal */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*definimos custom properties  */
+:root {
+  --color-fondo: #f0f8ff;
+  --color-primario: #4dabf7;
+  --color-secundario: #ffcc70;
+  --color-texto: #333;
+  --color--media: #F527C5;
+  --ancho-maximo: 900px; /*máximo ancho del contenido para controlar diseño en pantallas grandes */
+  --borde-radio: 12px;
+  --sombra: 0 4px 8px rgba(0,0,0,0.1);
+}
+/* estilos genrales para el body y la clase landing */
+body.landing {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-fondo);
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-texto);
+}
+
+.landing__header {
+  background-color: var(--color-primario);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.menu__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu__item {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+.menu__link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.landing__main {
+  max-width: var(--ancho-maximo); /*limita el ancho, evita que el contenedor se expanda demasidado en pantallas grandes*/
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.seccion {
+  margin-bottom: 3rem;
+}
+
+.seccion__titulo {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--color-primario);
+}
+
+.seccion__cartas {
+  /* display: inline-block; */
+  display: flex;
+}
+
+.carta {
+  /* display: inline-block; */
+  background-color: white;
+  border-radius: var(--borde-radio);
+  box-shadow: var(--sombra);
+  margin: 20px;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 1rem;
+  width: 80%; /*ocupa el 80% den conteneder*/
+  max-width: 300px; /*no crece mas de 300px*/
+  text-align: center;
+}
+
+.carta__imagen {
+  width: 100%; /*la img se adapta al ancho de su contenedor*/
+  max-width: 200px; /*limita el tamaño para que no se vea grande*/
+  height: auto;
+  border-radius: var(--borde-radio);
+}
+
+.carta__titulo {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.carta__traduccion {
+  font-size: 1.2rem;
+  color: var(--color-secundario);
+}
+
+@media (max-width: 600px){
+  /* reducimos el tamaño del texto */
+  .menu__link{
+    font-size: 0.9rem;
+  }
+  .menu__list{
+    text-align: center;
+    padding-right: 180px;
+  }
+  .seccion__titulo{
+    margin-right: 150px;
+  }
+  /* centramos el menu el bloqe vertical */
+  .menu__item{
+    display: block;
+    margin: 0.5rem 0;
+  }
+  /* ajustamos el padding del header */
+  .landing__header{
+    padding: 0.5rem 0;
+  }
+  /* reducimos el tamaño del titulo pirnicpal */
+  .landing__main{
+    padding: 1.2rem 0.8rem;
+  }
+  .seccion__titulo{
+    color: var(--color--media);
+  }
+  .seccion__cartas{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  .carta{
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 10px;
+  }
+
+}
